@@ -44,3 +44,11 @@ $ dart run build_runner build --delete-conflicting-outputs
 $ flutter run --dart-define=API_KEY=your_api_key_here
 ```
 Replace your_api_key_here with the API key you obtained from [NASA](https://api.nasa.gov/) .
+
+## What to expect 
+
+
+
+https://github.com/Xclusivecyborg/nasa_picture_of_the_day/assets/80969540/49aa460f-d856-4932-b31f-1f326de3d409
+
+
