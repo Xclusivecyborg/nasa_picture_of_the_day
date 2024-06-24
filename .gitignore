@@ -45,3 +45,5 @@ app.*.map.json
 
 # Dependency Injection generated file
 **/injector.config.dart
+
+.vscode/launch.json
