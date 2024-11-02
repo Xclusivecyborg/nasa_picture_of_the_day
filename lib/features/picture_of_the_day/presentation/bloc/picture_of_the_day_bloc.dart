@@ -15,7 +15,7 @@ class PictureOfTheDayCubit extends SafeCubit<PictureOfTheDayState> {
 
   final GetPictureOfTheDayUsecase _usecase;
   final RetrievePictureOfTheDayUsecase _retrievePotdUsecase;
-   DateTime lastAvailableDate = DateTime(1995, 06, 16);
+  DateTime lastAvailableDate = DateTime(1995, 06, 16);
 
   Future<void> getPictureOfTheDayList({
     bool loadMore = false,
@@ -38,9 +38,8 @@ class PictureOfTheDayCubit extends SafeCubit<PictureOfTheDayState> {
       final composedData = switch ((data?.length ?? 0) < 20 &&
           state.startDate.toDateTime.compareTo(lastAvailableDate) <= 0) {
         true => AsyncValue.done([...?state.potdList.value, ...?data]),
-        _ => (AsyncValue.data)(
-            [if (loadMore) ...?state.potdList.value, ...?data],
-          ),
+        _ =>
+          AsyncValue.data([if (loadMore) ...?state.potdList.value, ...?data]),
       };
 
       emit(state.copyWith(potdList: composedData));

@@ -6,20 +6,11 @@ import 'package:nasa_picture_of_the_day/features/picture_of_the_day/data/models/
 import 'package:nasa_picture_of_the_day/features/picture_of_the_day/domain/repository/picture_of_the_day_repository.dart';
 import 'package:nasa_picture_of_the_day/features/picture_of_the_day/domain/usecases/save_picture_of_the_day_usecase.dart';
 
-
 @Singleton()
 class GetPictureOfTheDayUsecase {
   final PictureOfTheDayRepository repository;
   final SavePictureOfTheDayUsecase savePotdUsecase;
-  GetPictureOfTheDayUsecase._(this.repository, this.savePotdUsecase);
-
-  static GetPictureOfTheDayUsecase? _instance;
-
-  factory GetPictureOfTheDayUsecase(PictureOfTheDayRepository repository,
-      SavePictureOfTheDayUsecase savePotdUsecase) {
-    return _instance ??=
-        GetPictureOfTheDayUsecase._(repository, savePotdUsecase);
-  }
+  GetPictureOfTheDayUsecase(this.repository, this.savePotdUsecase);
 
   Future<BaseResponse<List<PictureOfTheDay>>> call({
     required String startDate,
